@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"github.com/micro/go-micro"
+	"github.com/thrucker/email-service/id"
 	pb "github.com/thrucker/user-service/proto/user"
 	"log"
 )
@@ -18,7 +19,7 @@ func (sub *Subscriber) Process(ctx context.Context, user *pb.User) error {
 
 func main() {
 	srv := micro.NewService(
-		micro.Name("go.micro.srv.email"),
+		micro.Name(id.EmailServiceId),
 		micro.Version("latest"),
 	)
 
